@@ -1,0 +1,101 @@
+@mixin buttonStatus($color: var(--default), $color-focus: var(--default), $color-active: var(--default), $color-disabled: var(--default)) {
+  border: 1px solid $color-focus;
+  &:focus, &:hover{
+    color: var(--white);
+    border: 1px solid $color-focus;
+    background-color: $color-focus;
+  }
+  &:active{
+    color: var(--white);
+    border: 1px solid $color-active;
+    background-color: $color-active;
+  }
+  &:disabled{
+    // color: var(--white);
+    border: 1px solid $color-disabled;
+    background-color: $color-disabled;
+  }
+}
+@mixin paddingSize($padding-top: 8px, $padding-left: 15px, $padding-bottom: 8px, $padding-right: 15px, $font-size: 16px) {
+  padding: $padding-top $padding-left $padding-bottom $padding-right;
+  font-size: $font-size;
+  line-height: $font-size;
+}
+
+.ts-button{
+  display: inline-block;
+  margin: 2.5px 5px;
+  padding: 8px 15px;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: var(--gray-dark);
+  border: 1px solid var(--gray);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all .1s;
+
+  &:focus, &:hover{
+    color: var(--white);
+    border: 1px solid var(--gray);
+    background-color: var(--gray);
+  }
+  &:active{
+    color: var(--white);
+    border: 1px solid var(--gray-dark);
+    background-color: var(--gray-dark);
+  }
+  &:disabled{
+    color: var(--white);
+    border: 1px solid var(--gray);
+    background-color: var(--gray);
+  }
+
+  &[type="primary"]{
+    @include buttonStatus(var(--white), var(--primary), var(--primary-active), var(--primary-disabled));
+  }
+
+  &[type="success"]{
+    @include buttonStatus(var(--success), var(--success), var(--success-active), var(--success-disabled));
+  }
+
+  &[type="warning"]{
+    @include buttonStatus(var(--warning), var(--warning), var(--warning-active), var(--warning-disabled));
+  }
+
+  &[type="danger"]{
+    @include buttonStatus(var(--danger), var(--danger), var(--danger-active), var(--danger-disabled));
+  }
+
+  &[type="info"]{
+    @include buttonStatus(var(--info), var(--info), var(--info-active), var(--info-disabled));
+  }
+
+  &[type="text"]{
+    // @include buttonStatus(var(--text), var(--transparent), var(--text-active), var(--text-disabled));
+    color: var(--dark);
+    border: none;
+    &:focus, &:hover{
+      color: var(--gray-dark);
+      background-color: transparent;
+    }
+    &:active{
+      background-color: transparent;
+    }
+  }
+
+  &:disabled{
+    color: var(--white);
+    cursor: not-allowed;
+    &:hover{
+      color: var(--white);
+    }
+  }
+
+  &[size="small"]{
+    @include paddingSize(5px, 12px, 5px, 12px, 14px)
+  }
+  &[size="mini"]{
+    @include paddingSize(5px, 12px, 5px, 12px, 12px)
+  }
+}

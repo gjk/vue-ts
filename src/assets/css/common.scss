@@ -1,0 +1,49 @@
+/* body 变量 */
+body{
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+
+  --primary: #007bff;
+  --primary-active: #0069da;
+  --primary-disabled: #78a5d4;
+
+  --success: #28a745;
+  --success-active: #1e8336;
+  --success-disabled: #89c296;
+
+  --warning: #ffc107;
+  --warning-active: #d39e01;
+  --warning-disabled: #ffe189;
+
+  --danger: #dc3545;
+  --danger-active: #b32836;
+  --danger-disabled: #e07b7b;
+
+  --info: #17a2b8;
+  --info-active: #127d8d;
+  --info-disabled: #51b7c7;
+
+  --text: #fff;
+  --text-active: #127d8d;
+  --text-disabled: #51b7c7;
+
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --transparent: transparent;
+}
+
+/* 清除浮动 */
+.fix {
+  *zoom: 1;
+}
+
+.fix::before,
+.fix::after {
+  content: "";
+  display: table;
+}
+
+.fix::after {
+  clear: both;
+}
