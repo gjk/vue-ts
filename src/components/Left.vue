@@ -2,7 +2,7 @@
   <aside class="left-menu">
     <ul>
       <li><router-link to="buttonpage">按钮</router-link></li>
-      <li><router-link to="radiopage">>单选按钮</router-link></li>
+      <li><router-link to="radiopage">单选按钮</router-link></li>
       <li><a href="#">测试页2</a></li>
     </ul>
   </aside>
